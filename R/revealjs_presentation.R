@@ -78,6 +78,7 @@ revealjs_presentation <- function(incremental = FALSE,
                                   fig_height = 6,
                                   fig_retina = if (!fig_caption) 2,
                                   fig_caption = FALSE,
+                                  dev = 'png',
                                   smart = TRUE,
                                   self_contained = TRUE,
                                   theme = "default",
@@ -167,7 +168,7 @@ revealjs_presentation <- function(incremental = FALSE,
   
   # return format
   output_format(
-    knitr = knitr_options_html(fig_width, fig_height, fig_retina, keep_md),
+    knitr = knitr_options_html(fig_width, fig_height, fig_retina, keep_md, dev),
     pandoc = pandoc_options(to = "revealjs",
                             from = rmarkdown_format(ifelse(fig_caption, 
                                                            "", 
